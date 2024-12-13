@@ -27,8 +27,8 @@ switch ($action) {
     case "listGenres":
         $ctrlCinema->listGenres();
         break;
-    case "listFilms":
-        $ctrlCinema->listFilms();
-        break;
+    // case "listFilms":
+    //     $ctrlCinema->listFilms();
+    //     break;
 }
 ?>
