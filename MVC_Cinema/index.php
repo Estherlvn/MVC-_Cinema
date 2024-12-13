@@ -3,20 +3,27 @@
 use Controller\CinemaController;
 
 spl_autoload_register(function ($class_name) {
-    include $class_name . '.php';
+    $path = str_replace('\\', DIRECTORY_SEPARATOR, $class_name) . '.php';
+    if (file_exists($path)) {
+        include $path;
+    }
 });
-
 
 $ctrlCinema = new CinemaController();
 
-$id = (isset($GET["id"])) ? $_GET["id"] : null;
+$action = isset($_GET["action"]) ? $_GET["action"] : 'listFilms';
 
-if(isset($_GET["action"])){
-    switch ($_GET["action"]) {
+switch ($action) {
+    case "listFilms":
+        $ctrlCinema->listFilms();
+        break;
 
-    case "ListFilms" : $ctrlCinema->listFilms(); break;
-    case "ListActeurs" : $ctrlCinema->ListActeurs($id); break;
+    // case "detailFilm":
+    //     $ctrlCinema->detailFilm($id);
+    //     break;
+
+    // case "listActeurs":
+    //     $ctrlCinema->listActeurs($id);
+    //     break;
 }
-
-}
-
+?>
