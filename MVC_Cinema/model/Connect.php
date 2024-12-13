@@ -7,8 +7,8 @@ abstract class Connect {
 
     const HOST = "localhost";
     const DB = "cinema_ledlev";
-    CONST USER = "root";
-    CONST PASS = "";
+    const USER = "root";
+    const PASS = "";
 
     public static function seConnecter() {
         try {
