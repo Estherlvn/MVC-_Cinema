@@ -1,12 +1,13 @@
 <?php ob_start(); // La VIEW commence avec "ob_start()" ?> 
 
-<p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount() ?> films</p>
+<p class="uk-label uk-label-warning">LISTE DES <?= $requete->rowCount() ?> FILMS</p>
 
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
             <th>TITRE</th>
             <th>ANNÉE DE SORTIE</th>
+            <th>DUREE</th>
         </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
             <tr>
                 <td><?= htmlspecialchars($film["titre"]) ?></td>
                 <td><?= htmlspecialchars($film["sortie"]) ?></td>
+                <td><?= htmlspecialchars($film["duree"]) ?></td>
             </tr>
         <?php } ?>
     </tbody>
