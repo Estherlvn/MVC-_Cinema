@@ -7,6 +7,13 @@ use Model\Connect;
 
 class CinemaController {
 
+
+    // Page d'accueil
+    public function home() {
+        require "view/home.php";
+    }
+
+
     // Lister les films
     public function listFilms() {
         $pdo = Connect::seConnecter();
