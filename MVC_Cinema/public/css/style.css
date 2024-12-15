@@ -1,15 +1,56 @@
-/* body {
-  background-color: #302929;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1b1818;
+  color: aliceblue;
+  font-family: "Mooli", sans-serif;
+  font-weight: 400;
 }
 
-.uk-navbar-container:not(.uk-navbar-transparent) {
-  background-color: #302929;
+h1,
+h2 {
+  color: white;
 }
 
-.uk-table {
-  background-color: #302929;
+/***** STYLE NAV BAR ****/
+
+.uk-navbar-container {
+  display: flex;
+  justify-content: space-between; /* Aligne les éléments à gauche et à droite */
+  align-items: center; /* Assure que les éléments sont centrés verticalement */
+  background-color: #333;
+  padding: 10px 15px;
+}
+
+.uk-navbar-left {
+  display: flex;
+  align-items: center; /* Pour que le logo et les liens de navigation soient alignés */
+}
+
+.uk-logo img {
+  margin-right: 20px; /* Espace entre le logo et les éléments de navigation */
+}
+
+.uk-navbar-nav {
+  display: flex;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.uk-navbar-nav > li {
+  list-style: none;
+  margin-right: 20px; /* Espacement entre les éléments de la navbar */
 }
 
 .uk-navbar-nav > li > a {
   color: white;
-} */
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.uk-navbar-nav > li > a:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
