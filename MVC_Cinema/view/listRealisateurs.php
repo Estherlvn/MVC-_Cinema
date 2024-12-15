@@ -1,4 +1,4 @@
-<?php ob_start(); // La VIEW commence avec "ob_start()" ?> 
+<?php ob_start(); ?> 
 
 <p class="uk-label uk-label-warning">LISTE DES <?= $requete->rowCount() ?> REALISATEURS</p>
 
@@ -13,6 +13,7 @@
         <?php foreach($requete->fetchAll() as $realisateur) { ?>
             <tr>
                 <td><?= htmlspecialchars($realisateur["prenom"]) ?></td>
+                <td><a href="index.php?action=detailRealisateur&id=<?= $realisateur["id_realisateur"] ?>"><?= $realisateur["nom"] ?></a></td>
                 <td><?= htmlspecialchars($realisateur["nom"]) ?></td>
             </tr>
         <?php } ?>
@@ -22,6 +23,5 @@
 <?php
 $titre = "Liste des realisateurs";
 $titre_secondaire = "Liste des realisateurs";
-$contenu = ob_get_clean(); // La VIEW se termine avec "ob_get_clean()"
-require "view/template.php"; // Permet d'injecter le contenu dans le template "squelette" > template.php
-?>
+$contenu = ob_get_clean(); 
+require "view/template.php"; 

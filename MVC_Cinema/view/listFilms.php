@@ -13,6 +13,7 @@
     <tbody>
         <?php foreach($requete->fetchAll() as $film) { ?>
             <tr>
+            <td><a href="index.php?action=detailFilm&id=<?= $film["id_film"] ?>"><?= $film["titre"] ?></a></td>
                 <td><?= htmlspecialchars($film["titre"]) ?></td>
                 <td><?= htmlspecialchars($film["sortie"]) ?></td>
                 <td><?= htmlspecialchars($film["duree"]) ?></td>
