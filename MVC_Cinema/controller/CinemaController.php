@@ -173,5 +173,27 @@ class CinemaController {
 
         require "view/addGenre.php";
     }
+
+    // AJOUTER un acteur
+    public function addActeur() {
+        if (isset($_POST['submit']) && !empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["sexe"]) && !empty($_POST["naissance"])) {
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $naissance = filter_input(INPUT_POST, "naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare("INSERT INTO personne (nom, prenom, sexe, naissance) VALUES (:nom, :prenom, :sexe, :naissance)");
+            $requete->execute(["nom" => $nom, "prenom" => $prenom, "sexe" => $sexe, "naissance" => $naissance]);
+
+            $id_personne = $pdo->lastInsertId(); // récupère l'ID du dernier ajout "personne" pour l'ajouter à "acteur"
+
+            $requete = $pdo->prepare("INSERT INTO acteur (id_personne) VALUES (:id_personne)");
+            $requete->execute(["id_personne" => $id_personne]);
+
+            header("Location: index.php?action=listActeurs"); // Recharger la liste des acteurs après ajout
+        }
+
+        require "view/addActeur.php";
+    }
 }
 ?>

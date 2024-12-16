@@ -3,13 +3,20 @@
 <h1>Ajouter un acteur</h1>
 <form action="index.php?action=addActeur" method="post">
     <div class="uk-margin">
-        <label class="uk-form-label">Nom de l'acteur:</label>
-        <div class="uk-form-controls">
-            <input class="uk-input" type="text" name="nom" required>
-            <input class="uk-input" type="text" name="prenom" required>
-            <input class="uk-input" type="text" name="sexe" required>
-            <input class="uk-input" type="text" name="naissance" required>
-        </div>
+        <label class="uk-form-label">Nom:</label>
+        <input class="uk-input" type="text" name="nom" required>
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label">Prénom:</label>
+        <input class="uk-input" type="text" name="prenom" required>
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label">Sexe:</label>
+        <input class="uk-input" type="text" name="sexe" required>
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label">Année de naissance:</label>
+        <input class="uk-input" type="text" name="naissance" required>
     </div>
     <button class="uk-button uk-button-primary" type="submit" name="submit">Ajouter</button>
 </form>
