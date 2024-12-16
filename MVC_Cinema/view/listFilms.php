@@ -22,6 +22,8 @@
     </tbody>
 </table>
 
+<a href="index.php?action=addFilm" class="btnGenre">Ajouter un film</a>
+
 <?php
 $titre = "Liste des films";
 $titre_secondaire = "Liste des films";

@@ -55,12 +55,22 @@ switch ($action) {
         }
         break;
 
+    // AJOUTER genre, acteur, film, réalisateur
+
     case "addGenre":
         $ctrlCinema->addGenre();
         break;
 
     case "addActeur":
         $ctrlCinema->addActeur();
+        break;
+
+    case "addRealisateur":
+        $ctrlCinema->addRealisateur();
+        break;
+    
+    case "addFilm":
+        $ctrlCinema->addFilm();
         break;
 }
 ?>

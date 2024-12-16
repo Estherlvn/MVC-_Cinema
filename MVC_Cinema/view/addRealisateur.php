@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
-<h1>Ajouter un acteur</h1>
-<form action="index.php?action=addActeur" method="post">
+<h1>Ajouter un réalisateur</h1>
+<form action="index.php?action=addRealisateur" method="post">
     <div class="uk-margin">
         <label class="uk-form-label">Nom:</label>
         <input class="uk-input" type="text" name="nom" required>
@@ -10,7 +10,7 @@
         <label class="uk-form-label">Prénom:</label>
         <input class="uk-input" type="text" name="prenom" required>
     </div>
-    
+
     <div class="uk-margin">
     <label class="uk-form-label">Sexe:</label>
     <div class="uk-form-controls">

@@ -21,6 +21,8 @@
     </tbody>
 </table>
 
+<a href="index.php?action=addRealisateur" class="btnGenre">Ajouter un réalisateur</a>
+
 <?php
 $titre = "Liste des realisateurs";
 $titre_secondaire = "Liste des realisateurs";

@@ -166,8 +166,6 @@ class CinemaController {
             $requete = $pdo->prepare("INSERT INTO genre (nom_genre) VALUES (:nom_genre)");
             $requete->execute(["nom_genre" => $nom_genre]);
 
-            // $id = $pdo->lastInsertId();
-
             header("Location: index.php?action=listGenres"); // Recharger la liste des genres après ajout
         }
 
@@ -195,5 +193,69 @@ class CinemaController {
 
         require "view/addActeur.php";
     }
+    
+    // AJOUTER un réalisateur
+    public function addRealisateur() {
+        if (isset($_POST['submit']) && !empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["sexe"]) && !empty($_POST["naissance"])) {
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $naissance = filter_input(INPUT_POST, "naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare("INSERT INTO personne (nom, prenom, sexe, naissance) VALUES (:nom, :prenom, :sexe, :naissance)");
+            $requete->execute(["nom" => $nom, "prenom" => $prenom, "sexe" => $sexe, "naissance" => $naissance]);
+
+            $id_personne = $pdo->lastInsertId(); // récupère l'ID du dernier ajout "personne" pour l'ajouter à "réalisateur"
+
+            $requete = $pdo->prepare("INSERT INTO realisateur (id_personne) VALUES (:id_personne)");
+            $requete->execute(["id_personne" => $id_personne]);
+
+            header("Location: index.php?action=listRealisateurs"); // Recharger la liste des réalisateur après ajout
+        }
+
+        require "view/addRealisateur.php";
+    }
+
+
+    
+     // AJOUTER un film
+     public function addFilm() {
+        // Récupérer la liste des réalisateurs
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query("SELECT id_realisateur, prenom, nom FROM realisateur INNER JOIN personne ON realisateur.id_personne = personne.id_personne");
+        $realisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Si le formulaire est soumis, traiter les données et ajouter le film
+        if (isset($_POST['submit'])) {
+            $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_STRING);
+            $sortie = filter_input(INPUT_POST, 'sortie', FILTER_SANITIZE_NUMBER_INT);
+            $realisateur_id = filter_input(INPUT_POST, 'realisateur', FILTER_SANITIZE_NUMBER_INT);  // ID du réalisateur sélectionné
+            $duree = filter_input(INPUT_POST, 'duree', FILTER_SANITIZE_NUMBER_INT);
+            $synopsis = filter_input(INPUT_POST, 'synopsis', FILTER_SANITIZE_STRING);
+            $note = filter_input(INPUT_POST, 'note', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    
+            // Préparer et exécuter l'insertion dans la base de données
+            $requete = $pdo->prepare("INSERT INTO film (titre, sortie, realisateur_id, duree, synopsis, note) VALUES (:titre, :sortie, :realisateur_id, :duree, :synopsis, :note)");
+            $requete->execute([
+                'titre' => $titre,
+                'sortie' => $sortie,
+                'realisateur_id' => $realisateur_id,
+                'duree' => $duree,
+                'synopsis' => $synopsis,
+                'note' => $note
+            ]);
+    
+            // Rediriger après ajout
+            header("Location: index.php?action=listFilms");
+            exit();
+        }
+    
+        // Charger la vue d'ajout de film
+        require "view/addFilm.php";
+    }
+    
+
+
 }
 ?>
+
