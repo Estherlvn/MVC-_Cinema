@@ -17,6 +17,8 @@
     </tbody>
 </table>
 
+<a href="index.php?action=addGenre" class="btnGenre">Ajouter un genre</a>
+
 <?php
 $titre = "Liste des genres";
 $titre_secondaire = "Liste des genres";

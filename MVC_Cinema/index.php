@@ -54,5 +54,13 @@ switch ($action) {
             echo "Réalisateur non spécifié.";
         }
         break;
+
+    case "addGenre":
+        $ctrlCinema->addGenre();
+        break;
+
+    case "addActeur":
+        $ctrlCinema->addActeur();
+        break;
 }
 ?>

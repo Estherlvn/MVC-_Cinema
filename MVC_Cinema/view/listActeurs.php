@@ -21,6 +21,8 @@
     </tbody>
 </table>
 
+<a href="index.php?action=addActeur" class="btnGenre">Ajouter un acteur</a>
+
 <?php
 $titre = "Liste des acteurs";
 $titre_secondaire = "Liste des acteurs";

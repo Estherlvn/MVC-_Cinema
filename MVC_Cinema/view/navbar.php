@@ -6,6 +6,10 @@
             <img src="public/img/logo.png" alt="Logo" style="max-height: 50px;"> 
         </a>
         
+        <a href="index.php?action=home" class="searchBar">
+            <img src="public/img/search_bar.png" alt="Barre de recherche" style="max-height: 40px;"> 
+        </a>
+
         <!-- Liens de navigation -->
         <ul class="uk-navbar-nav">
             <li><a href="index.php?action=home">Accueil</a></li>
@@ -23,7 +27,7 @@
             <img src="public/img/fav.png" alt="Favoris" style="max-height: 40px;"> 
         </a>
         <a href="index.php?action=home" class="iconeLog">
-            <img src="public/img/log.png" alt="Connexion" style="max-height: 50px;"> 
+            <img src="public/img/log.png" alt="Connexion" style="max-height: 40px;"> 
         </a>
 
 

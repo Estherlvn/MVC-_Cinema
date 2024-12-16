@@ -12,8 +12,8 @@
     <title><?= $titre ?></title>
 </head>
 <body>
+<?php include 'navbar.php'; // Inclure la barre de navigation ?>
     <div id="wrapper" class="uk-container uk-container-expand">
-        <?php include 'navbar.php'; // Inclure la barre de navigation ?>
         <main>
             <div id="contenu">
                 <?= $contenu ?>

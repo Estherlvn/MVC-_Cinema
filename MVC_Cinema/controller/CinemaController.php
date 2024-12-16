@@ -157,5 +157,21 @@ class CinemaController {
         require "view/detailRealisateur.php";
     }
 
+
+    // AJOUTER un Genre
+    public function addGenre() {
+        if (isset($_POST['submit']) && !empty($_POST["nom_genre"])) {
+            $nom_genre = filter_input(INPUT_POST, "nom_genre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare("INSERT INTO genre (nom_genre) VALUES (:nom_genre)");
+            $requete->execute(["nom_genre" => $nom_genre]);
+
+            // $id = $pdo->lastInsertId();
+
+            header("Location: index.php?action=listGenres"); // Recharger la liste des genres après ajout
+        }
+
+        require "view/addGenre.php";
+    }
 }
 ?>

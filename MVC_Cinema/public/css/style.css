@@ -1,3 +1,5 @@
+/**** MAIN ****/
+
 body {
   margin: 0;
   padding: 0;
@@ -8,10 +10,20 @@ body {
   font-weight: 400;
 }
 
+#wrapper {
+  margin: 40px;
+}
+
 h1,
 h2 {
   color: white;
 }
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
 
 /***** STYLE NAV BAR ****/
 
@@ -34,7 +46,7 @@ h2 {
 
 .uk-navbar-nav {
   display: flex;
-  margin-left: 0;
+  margin-left: 50px;
   padding-left: 0;
 }
 
@@ -53,4 +65,17 @@ h2 {
 .uk-navbar-nav > li > a:hover {
   background-color: #f1f1f1;
   color: #333;
+}
+
+.searchBar {
+  margin-left: 40px;
+}
+
+
+
+/****BOUTONS****/
+
+.btnGenre {
+  margin: 100px;
+  text-decoration: underline;
 }
