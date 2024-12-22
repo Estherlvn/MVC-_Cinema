@@ -40,6 +40,11 @@
             </label><br>
         <?php endforeach; ?>
     </div>
+    <div class="uk-margin">
+        <label class="uk-form-label">URL de l'image:</label>
+        <input class="uk-input" type="url" name="img_url" required>
+    </div>
+
     <button class="uk-button uk-button-primary" type="submit" name="submit">Ajouter</button>
 </form>
 

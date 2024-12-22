@@ -7,16 +7,23 @@
         <tr>
             <th>TITRE</th>
             <th>ANNÉE DE SORTIE</th>
-            <th>DUREE</th>
+            <th>DURÉE</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach($requete->fetchAll() as $film) { ?>
             <tr>
-            <td><a href="index.php?action=detailFilm&id=<?= $film["id_film"] ?>">
-                <?= $film["titre"] ?></a></td>
+                <td><a href="index.php?action=detailFilm&id=<?= htmlspecialchars($film["id_film"]) ?>">
+                    <?= htmlspecialchars($film["titre"]) ?></a></td>
                 <td><?= htmlspecialchars($film["sortie"]) ?></td>
                 <td><?= htmlspecialchars($film["duree"]) ?></td>
+                <td>
+                    <?php if (!empty($film["img_url"]) && filter_var($film["img_url"], FILTER_VALIDATE_URL)): ?>
+                        <img src="<?= htmlspecialchars($film["img_url"]) ?>" alt="<?= htmlspecialchars($film["titre"]) ?>" style="max-width: 300px;">
+                    <?php else: ?>
+                        <span>Aucune image</span>
+                    <?php endif; ?>
+                </td>
             </tr>
         <?php } ?>
     </tbody>
