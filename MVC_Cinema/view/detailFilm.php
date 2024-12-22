@@ -4,7 +4,8 @@
 <h1><?= htmlspecialchars($film["titre"]) ?></h1>
 <p><strong>Année de sortie :</strong> <?= htmlspecialchars($film["sortie"]) ?></p>
 <p><strong>Durée :</strong> <?= htmlspecialchars($film["duree"]) ?> minutes</p>
-<p><strong>Synopsis :</strong> <?= htmlspecialchars($film["synopsis"]) ?></p>
+<!-- <p><strong>Synopsis :</strong> <?= htmlspecialchars($film["synopsis"]) ?></p> -->
+<p><strong>Synopsis :</strong> <?= html_entity_decode($film["synopsis"]) ?></p>
 
 <?php if (!empty($film["img_url"]) && filter_var($film["img_url"], FILTER_VALIDATE_URL)): ?>
     <img src="<?= htmlspecialchars($film["img_url"]) ?>" alt="<?= htmlspecialchars($film["titre"]) ?>" style="max-width: 300px;">
