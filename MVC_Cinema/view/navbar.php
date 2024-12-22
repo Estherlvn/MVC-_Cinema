@@ -3,11 +3,11 @@
 
         <!-- Logo cliquable menant à la page d'accueil -->
         <a href="index.php?action=home" class="uk-navbar-item uk-logo">
-            <img src="public/img/logo.png" alt="Logo" style="max-height: 50px;"> 
+            <img src="public/img/LOGO_nav.png" alt="Logo" style="max-height: 50px;"> 
         </a>
         
         <a href="index.php?action=home" class="searchBar">
-            <img src="public/img/search_bar.png" alt="Barre de recherche" style="max-height: 40px;"> 
+            <img src="public/img/searchBar.png" alt="Barre de recherche" style="max-height: 40px;"> 
         </a>
 
         <!-- Liens de navigation -->
@@ -24,10 +24,10 @@
         <!-- Éléments situés à droite de la navbar -->
 
         <a href="index.php?action=home" class="iconeFav">
-            <img src="public/img/fav.png" alt="Favoris" style="max-height: 40px;"> 
+            <img src="public/img/fav.png" alt="Favoris" style="max-height: 30px;"> 
         </a>
         <a href="index.php?action=home" class="iconeLog">
-            <img src="public/img/log.png" alt="Connexion" style="max-height: 40px;"> 
+            <img src="public/img/log.png" alt="Connexion" style="max-height: 30px;"> 
         </a>
 
 

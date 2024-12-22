@@ -10,12 +10,19 @@ body {
   font-weight: 400;
 }
 
-#wrapper {
-  margin: 40px;
+/********* HOME **********/
+#pageAcc {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-h1,
-h2 {
+.accueil h1 {
+  color: white;
+  font-size: 4em;
+}
+
+.accueil h2 {
   color: white;
 }
 
@@ -24,13 +31,56 @@ a {
   color: aliceblue;
 }
 
+img.poster {
+  width: 1000px; /* Définir une largeur fixe */
+  height: 700px; /* Définir une hauteur fixe */
+  object-fit: cover; /* S'assure que l'image couvre toute la dimension sans déformation */
+
+  /* Mask pour créer un effet de fondu plus fin sur le côté gauche uniquement */
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 0%,
+    transparent 20%,
+    transparent 100%
+  );
+  -webkit-mask-size: cover;
+
+  mask-image: linear-gradient(
+    to left,
+    black 0%,
+    /* Le fondu commence à % de l'image, vers la gauche */ transparent 98%,
+    /* transparence de'limage */ transparent 100%
+  );
+  mask-size: cover;
+}
+
+/********* SLIDER ************/
+.slideshow-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /***** STYLE NAV BAR ****/
 
 .uk-navbar-container {
   display: flex;
   justify-content: space-between; /* Aligne les éléments à gauche et à droite */
   align-items: center; /* Assure que les éléments sont centrés verticalement */
-  background-color: #333;
+  background-color: #000000;
   padding: 10px 15px;
 }
 

@@ -8,8 +8,14 @@ use Model\Connect;
 class CinemaController {
 
 
-    // Page d'accueil
+    // Page d'accueil // HOME CONTROLLER
     public function home() {
+        $pdo = Connect::seConnecter();
+    
+        // Requete pour récupérer les URLs des images des films
+        $requete = $pdo->query("SELECT img_url FROM film WHERE img_url IS NOT NULL");
+        $images = $requete->fetchAll();
+    
         require "view/home.php";
     }
 

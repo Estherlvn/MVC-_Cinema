@@ -15,12 +15,13 @@
 <?php include 'navbar.php'; // Inclure la barre de navigation ?>
     <div id="wrapper" class="uk-container uk-container-expand">
         <main>
-            <div id="contenu">
+            <div id="pageAcc">
                 <?= $contenu ?>
             </div>
         </main>
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script> -->
+    <script src="public/js/slider.js"></script>
 </body>
 </html>
