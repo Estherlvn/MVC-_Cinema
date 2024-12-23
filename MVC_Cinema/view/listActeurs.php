@@ -1,6 +1,10 @@
 <?php ob_start(); // La VIEW commence avec "ob_start()" ?> 
 
-<p class="uk-label uk-label-warning">LISTE DES <?= $requete->rowCount() ?> ACTEURS</p>
+<div class="film-page">
+    <div class="film-header">
+<p class="uk-label uk-label-warning">La bibliothèque contient <?= $requete->rowCount() ?> acteurs</p>
+<a href="index.php?action=addActeur" class="btnGenre">Ajouter un acteur</a>
+</div>
 
 <table class="uk-table uk-table-striped">
     <thead>
@@ -20,8 +24,7 @@
         <?php } ?>
     </tbody>
 </table>
-
-<a href="index.php?action=addActeur" class="btnGenre">Ajouter un acteur</a>
+</div>
 
 <?php
 $titre = "Liste des acteurs";

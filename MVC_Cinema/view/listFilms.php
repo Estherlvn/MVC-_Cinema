@@ -13,7 +13,9 @@
                     <th>TITRE</th>
                     <th>ANNÉE DE SORTIE</th>
                     <th>DURÉE</th>
-                    <th>IMAGE</th>
+                    <th>AFFICHE</th>
+                    <th>NOTE</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +32,8 @@
                                 <span>Aucune image</span>
                             <?php endif; ?>
                         </td>
+                        <td><?= htmlspecialchars(number_format($film["note"], 1)) ?></td>
+
                     </tr>
                 <?php } ?>
             </tbody>

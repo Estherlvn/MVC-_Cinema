@@ -1,6 +1,10 @@
 <?php ob_start(); ?> 
 
-<p class="uk-label uk-label-warning">LISTE DES <?= $requete->rowCount() ?> REALISATEURS</p>
+<div class="film-page">
+    <div class="film-header">
+<p class="uk-label uk-label-warning">La bibliothèque contient <?= $requete->rowCount() ?> réalisateurs</p>
+<a href="index.php?action=addRealisateur" class="btnGenre">Ajouter un réalisateur</a>
+</div>
 
 <table class="uk-table uk-table-striped">
     <thead>
@@ -20,8 +24,8 @@
         <?php } ?>
     </tbody>
 </table>
+</div>
 
-<a href="index.php?action=addRealisateur" class="btnGenre">Ajouter un réalisateur</a>
 
 <?php
 $titre = "Liste des realisateurs";

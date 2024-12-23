@@ -24,7 +24,7 @@ class CinemaController {
     public function listFilms() {
         $pdo = Connect::seConnecter();
         $requete = $pdo->query("
-            SELECT id_film, titre, sortie, duree, img_url
+            SELECT id_film, titre, sortie, duree, img_url, note
             FROM film
             ORDER BY sortie DESC
         ");
@@ -254,13 +254,15 @@ class CinemaController {
             !empty($_POST["genres"]) &&
             !empty($_POST["img_url"])) {
     
+
+            // filtrer les données avant
             $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $sortie = filter_input(INPUT_POST, 'sortie', FILTER_SANITIZE_NUMBER_INT);
             $id_realisateur = filter_input(INPUT_POST, 'realisateur', FILTER_SANITIZE_NUMBER_INT);  // ID du réalisateur sélectionné
             $duree = filter_input(INPUT_POST, 'duree', FILTER_SANITIZE_NUMBER_INT);
             $synopsis = filter_input(INPUT_POST, 'synopsis', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $note = filter_input(INPUT_POST, 'note', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-            $genresSelected = $_POST['genres']; // Récupérer les genres sélectionnés sous forme de tableau
+            $genres = filter_input(INPUT_POST, 'genres', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
             $img_url = filter_input(INPUT_POST, 'img_url', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
             // Préparer et exécuter l'insertion du film dans la base de données
