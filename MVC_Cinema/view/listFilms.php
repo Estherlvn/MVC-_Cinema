@@ -1,35 +1,41 @@
-<?php ob_start(); // La VIEW commence avec "ob_start()" ?> 
+<?php ob_start(); // La VIEW commence avec "ob_start()" ?>
 
-<p class="uk-label uk-label-warning">LISTE DES <?= $requete->rowCount() ?> FILMS</p>
+<div class="film-page">
+    <div class="film-header">
+        <p class="uk-label uk-label-warning">La bibliothèque contient actuellement <?= $requete->rowCount() ?> films</p>
+        <a href="index.php?action=addFilm" class="btnGenre">Ajouter un film</a>
+    </div>
 
-<table class="uk-table uk-table-striped">
-    <thead>
-        <tr>
-            <th>TITRE</th>
-            <th>ANNÉE DE SORTIE</th>
-            <th>DURÉE</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($requete->fetchAll() as $film) { ?>
-            <tr>
-                <td><a href="index.php?action=detailFilm&id=<?= htmlspecialchars($film["id_film"]) ?>">
-                    <?= htmlspecialchars($film["titre"]) ?></a></td>
-                <td><?= htmlspecialchars($film["sortie"]) ?></td>
-                <td><?= htmlspecialchars($film["duree"]) ?></td>
-                <td>
-                    <?php if (!empty($film["img_url"]) && filter_var($film["img_url"], FILTER_VALIDATE_URL)): ?>
-                        <img src="<?= htmlspecialchars($film["img_url"]) ?>" alt="<?= htmlspecialchars($film["titre"]) ?>" style="max-width: 300px;">
-                    <?php else: ?>
-                        <span>Aucune image</span>
-                    <?php endif; ?>
-                </td>
-            </tr>
-        <?php } ?>
-    </tbody>
-</table>
-
-<a href="index.php?action=addFilm" class="btnGenre">Ajouter un film</a>
+    <div class="film-table-container">
+        <table class="uk-table uk-table-divider uk-table-hover">
+            <thead>
+                <tr>
+                    <th>TITRE</th>
+                    <th>ANNÉE DE SORTIE</th>
+                    <th>DURÉE</th>
+                    <th>IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($requete->fetchAll() as $film) { ?>
+                    <tr>
+                        <td><a href="index.php?action=detailFilm&id=<?= htmlspecialchars($film["id_film"]) ?>">
+                            <?= htmlspecialchars($film["titre"]) ?></a></td>
+                        <td><?= htmlspecialchars($film["sortie"]) ?></td>
+                        <td><?= htmlspecialchars($film["duree"]) ?></td>
+                        <td>
+                            <?php if (!empty($film["img_url"]) && filter_var($film["img_url"], FILTER_VALIDATE_URL)): ?>
+                                <img src="<?= htmlspecialchars($film["img_url"]) ?>" alt="<?= htmlspecialchars($film["titre"]) ?>" class="film-image">
+                            <?php else: ?>
+                                <span>Aucune image</span>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <?php
 $titre = "Liste des films";

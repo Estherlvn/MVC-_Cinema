@@ -1,5 +1,4 @@
 /**** MAIN ****/
-
 body {
   margin: 0;
   padding: 0;
@@ -10,11 +9,17 @@ body {
   font-weight: 400;
 }
 
-/********* HOME **********/
 #pageAcc {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  height: 700px; /* Fixer la hauteur totale pour éviter le déplacement */
+}
+
+.accueil {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 50px;
 }
 
 .accueil h1 {
@@ -24,6 +29,24 @@ body {
 
 .accueil h2 {
   color: white;
+}
+
+button#btnHome {
+  margin-left: auto;
+  margin-top: 10px;
+  padding: 10px 40px;
+  border-radius: 3px;
+  background-color: #ffd461;
+  color: black;
+  font-family: mooli;
+  font-weight: bold;
+  width: 30%;
+  display: flex;
+}
+
+button#btnHome:hover {
+  background-color: #caad5d;
+  cursor: pointer;
 }
 
 a {
@@ -58,6 +81,16 @@ img.poster {
 .slideshow-container {
   display: flex;
   justify-content: flex-end;
+  width: 1300px; /* Assurer que la largeur du conteneur est fixée */
+  height: 700px; /* Assurer que la hauteur du conteneur est fixée */
+  position: relative; /* Permet de positionner les slides de manière absolue */
+}
+
+.mySlides {
+  display: none;
+  position: absolute; /* Permet de superposer les slides */
+  width: 1300px;
+  height: 700px;
 }
 
 .fade {
@@ -125,4 +158,30 @@ img.poster {
 .btnGenre {
   margin: 100px;
   text-decoration: underline;
+}
+
+/*****SEARCH BAR*******/
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.uk-search-navbar {
+  max-height: 30px;
+}
+
+.uk-search-input {
+  height: 30px; /* Assurer une hauteur constante */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 2px 40px;
+}
+
+.uk-search-icon-flip {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

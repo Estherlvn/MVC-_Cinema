@@ -6,9 +6,11 @@
             <img src="public/img/LOGO_nav.png" alt="Logo" style="max-height: 50px;"> 
         </a>
         
-        <a href="index.php?action=home" class="searchBar">
-            <img src="public/img/searchBar.png" alt="Barre de recherche" style="max-height: 40px;"> 
-        </a>
+        <!-- Formulaire de recherche -->
+        <form action="index.php?action=searchFilms" method="get" class="searchBar uk-search uk-search-navbar">
+            <input class="uk-search-input" type="search" name="query" placeholder="Rechercher un film..." style="max-height: 40px;">
+            <button type="submit" class="uk-search-icon-flip" uk-search-icon></button>
+        </form>
 
         <!-- Liens de navigation -->
         <ul class="uk-navbar-nav">
@@ -24,13 +26,10 @@
         <!-- Éléments situés à droite de la navbar -->
 
         <a href="index.php?action=home" class="iconeFav">
-            <img src="public/img/fav.png" alt="Favoris" style="max-height: 30px;"> 
+            <img src="public/img/fav.png" alt="Favoris" style="max-height: 40px;"> 
         </a>
         <a href="index.php?action=home" class="iconeLog">
-            <img src="public/img/log.png" alt="Connexion" style="max-height: 30px;"> 
+            <img src="public/img/log.png" alt="Connexion" style="max-height: 40px;"> 
         </a>
-
-
-
     </div>
 </nav>
