@@ -1,4 +1,4 @@
-# 🎬 Gestion de Film - PHP/MVC
+# 🎬 Gestion de Films - Wikipédia de Films
 
 Ce projet est une application web permettant de gérer une base de données de films, acteurs, réalisateurs et genres. 
 Il est développé en **PHP** avec une architecture **MVC** et utilise **PDO** pour l'accès à la base de données.
@@ -36,16 +36,16 @@ Il est développé en **PHP** avec une architecture **MVC** et utilise **PDO** p
    cd Projet_Forum-MVC
    
 2. **Configurer la base de données**
-Importer le fichier database.sql (fourni dans le projet) dans votre serveur MySQL.
-Modifier le fichier Connect.php avec vos informations de connexion.
+Importer le fichier database.sql (fourni dans le projet) dans votre serveur MySQL.  
+Modifier le fichier Connect.php avec vos informations de connexion.  
 3. **Lancer le serveur PHP**
-Accéder à l'application sur http://localhost:8000/
+Accéder à l'application sur http://localhost:8000/  
 
 🛠️ Technologies utilisées
-PHP (MVC, PDO)  
-MySQL (Gestion des données)  
-HTML/CSS (Interface utilisateur)  
-Bootstrap (Framework CSS pour un design responsive)  
+- PHP (MVC, PDO)  
+- MySQL (Gestion des données)  
+- HTML/CSS (Interface utilisateur)  
+- Bootstrap (Framework CSS pour un design responsive)  
 
 Réalisation: Estherlvn
 
