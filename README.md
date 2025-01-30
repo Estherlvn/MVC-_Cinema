@@ -42,10 +42,10 @@ Modifier le fichier Connect.php avec vos informations de connexion.
 Accéder à l'application sur http://localhost:8000/
 
 🛠️ Technologies utilisées
-PHP (MVC, PDO)
-MySQL (Gestion des données)
-HTML/CSS (Interface utilisateur)
-Bootstrap (Framework CSS pour un design responsive)
+PHP (MVC, PDO)  
+MySQL (Gestion des données)  
+HTML/CSS (Interface utilisateur)  
+Bootstrap (Framework CSS pour un design responsive)  
 
 Réalisation: Estherlvn
 
