@@ -18,8 +18,11 @@ Il est développé en **PHP** avec une architecture **MVC** et utilise **PDO** p
 │── 📁 controller │  
 ├── FilmController.php │ ├── ActeurController.php │ ├── RealisateurController.php │ ├── GenreController.php   
 │── 📁 model │ ├── Connect.php │ ├── Film.php │ ├── Acteur.php │ ├── Realisateur.php │ ├── Genre.php  
-│── 📁 view │ ├── film │ │ ├── listFilms.php │ │ ├── addFilm.php │ ├── acteur │ │ ├── listActeurs.php │ │ ├── addActeur.php │ ├── realisateur │ │ ├── listRealisateurs.php │ │ ├── addRealisateur.php │ ├── genre │ │
-├── listGenres.php │ │ ├── addGenre.php  
+│── 📁 view │  
+├── film │ │ ├── listFilms.php │ │ ├── addFilm.php │  
+├── acteur │ │ ├── listActeurs.php │ │ ├── addActeur.php │  
+├── realisateur │ │ ├── listRealisateurs.php │ │ ├── addRealisateur.php │  
+├── genre │ │ ├── listGenres.php │ │ ├── addGenre.php  
 │── 📁 public │ ├── index.php  
 │── 📁 assets │ ├── styles.css  
 
